@@ -1,0 +1,295 @@
+<style>
+    .discoverDS {
+        align-items: flex-end;
+        gap: 32 px;
+        padding: 20px;
+    }
+
+    .dropdown {
+        display: flex;
+        gap: 38px;
+        color: #25055D;
+        color: black;
+
+    }
+
+    .dropdowngroup {
+        display: flex;
+        padding-right: 10px;
+        margin-bottom: 32px;
+    }
+
+    .disneyinfo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .headtitle {
+        color: #290568;
+        font-family: Inter;
+        font-size: 48px;
+        font-style: bold;
+        font-weight: 700;
+        line-height: normal;
+        padding-bottom: 50px;
+    }
+
+    .showcomment {
+        background-color: #25055D;
+        border-radius: 10px;
+        padding: 32px 28px;
+    }
+
+    .comment {
+        display: flex;
+        height: 25%;
+        padding: 32px 24px 24px;
+        align-items: center;
+        gap: 32px;
+        border-radius: 20px;
+        background: #EAE6F1;
+        margin-bottom: 32px;
+    }
+
+    .addcomment {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        background: #EAE6F1;
+        padding: 10px;
+        resize: none;
+    }
+
+    #pie-chart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 72px;
+    }
+
+    #eachcomment {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: black;
+    }
+
+    .userpic {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: darkgoldenrod;
+    }
+</style>
+{% extends 'webpages/layout.html' %}
+{% load static %}
+{% block title %}
+Disneyland Reviews
+{% endblock %}
+
+{% block content %}
+<div class="discoverDS">
+    <p class="headtitle">
+        Places
+    </p>
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10 px; width: 470px; text-align: left; display: flex; justify-content: space-between;
+        border: 0.5px solid #290568;
+        background: #EAE6F1;">
+            Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="border-radius: 10 px; width: 470px;
+        border: 0.5px solid #290568;
+        background: #EAE6F1;">
+            <li><a class="dropdown-item" href="#">Disneyland Hongkok</a></li>
+            <li><a class="dropdown-item" href="#">Disneyland Paris</a></li>
+            <li><a class="dropdown-item" href="#">Disneyland California</a></li>
+        </ul>
+    </div>
+    <div class="disneyinfo">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 72px;">
+            <img src="{% static '440px-Disneyland_Park_Logo.svg.png' %}" class="App-logo" alt="logo"
+                style=" width: 440px; height: 121px; margin: 0 auto;" ; />
+            <p style="color: #2E0674;
+            text-align: center;
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;">
+                Disneyland is a theme park in Anaheim, California. Opened in 1955, it was the first theme park opened by
+                The Walt Disney Company and the only one designed and constructed under the direct supervision of Walt
+                Disney
+            </p>
+        </div>
+        <div>
+            <img src="{% static 'disney.jpeg' %}" class="App-logo" alt="logo"
+                style=" width: 589px; height: 479px; border-radius: 20px;" ; />
+        </div>
+    </div>
+</div>
+<div>
+    <div>
+        <p class="headtitle">
+            Disneyland Hongkong
+        </p>
+        <div style="display: grid;
+    grid-template-columns: 50% 50%;"">
+    <div class=" piechart">
+            <script src="https://d3js.org/d3.v5.min.js"></script>
+            <div id="pie-chart">
+                <script>
+                    const data = [
+                        { label: 'Positive', value: 50 },
+                        { label: 'Negative', value: 30 },
+                        { label: 'Neutral', value: 20 },
+                        { label: 'Very Positive', value: 40 },
+                        { label: 'Very Negative', value: 10 },
+                    ];
+
+                    const width = 400; // Width of the SVG container
+                    const height = 400; // Height of the SVG container
+                    const radius = Math.min(width, height) / 2; // Radius of the pie chart
+
+                    const color = d3.scaleOrdinal()
+                        .domain(data.map(d => d.label))
+                        .range(['#BCC9CC', '#D2D6D0', '#290568', '#0F0595', '#283AAC']);
+
+                    const svg = d3.select('#pie-chart')
+                        .append('svg')
+                        .attr('width', width)
+                        .attr('height', height)
+                        .append('g')
+                        .attr('transform', `translate(${width / 2},${height / 2})`);
+
+                    const pie = d3.pie()
+                        .value(d => d.value);
+
+                    const data_ready = pie(data);
+                    const arc = d3.arc()
+                        .innerRadius(0)
+                        .outerRadius(radius);
+
+                    svg.selectAll('path')
+                        .data(data_ready)
+                        .enter()
+                        .append('path')
+                        .attr('d', arc)
+                        .attr('fill', (d, i) => color(i));
+
+                    // No legend is created, and labels inside the pie chart are removed.
+                </script>
+                <p style="font-size: 42px; color: #290568; font-weight: 1000;">PIE CHART</p>
+            </div>
+        </div>
+        <div class="showcomment">
+            <div class="dropdowngroup">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="border-radius: 10 px;
+                    width: 242px; text-align: left; 
+                    display: flex; 
+                    justify-content: space-between;
+                    border: 0.5px solid #290568;
+                    background: #EAE6F1;
+                    border-radius: 10px;">
+                        Rating
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="border-radius: 10 px;
+                border: 0.5px solid #290568; 
+                background: #EAE6F1;">
+                        <li><a class="dropdown-item" href="#">⭐️⭐️⭐️⭐️⭐️</a></li>
+                        <li><a class="dropdown-item" href="#">⭐️⭐️⭐️⭐️</a></li>
+                        <li><a class="dropdown-item" href="#">⭐️⭐️⭐️</a></li>
+                        <li><a class="dropdown-item" href="#">⭐️⭐️</a></li>
+                        <li><a class="dropdown-item" href="#">⭐️</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                        style="border-radius: 10 px;
+                    width: 242px; text-align: left; 
+                    display: flex; 
+                    justify-content: space-between;
+                    border: 0.5px solid #290568;
+                    background: #EAE6F1;
+                    border-radius: 10px;">
+                        Setiment Rating
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="border-radius: 10 px;
+                border: 0.5px solid #290568; 
+                background: #EAE6F1;">
+                        <li><a class="dropdown-item" href="#">Positive</a></li>
+                        <li><a class="dropdown-item" href="#">Neutral</a></li>
+                        <li><a class="dropdown-item" href="#">Negative</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="userpic">
+                    <img src="{% static 'KedCAt.jpg' %}" class="img-thumbnail" />
+                </div>
+                <div class="eachcomment">
+                    <p>⭐️⭐️⭐️⭐️</p>
+                    <p>*comment*</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="userpic">
+                    <img src="{% static 'walt1.webp' %}" class="img-thumbnail" />
+                </div>
+                <div class="eachcomment">
+                    <p>⭐️⭐️⭐️</p>
+                    <p>*comment*</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="userpic">
+                    <img src="{% static 'Mond.jpg' %}" class="img-thumbnail" />
+                </div>
+                <div class="eachcomment">
+                    <p>⭐️⭐️⭐️</p>
+                    <p>*comment*</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="writereview">
+    <div class="review-container">
+        <h2 class="review-title">Write Your Review</h2>
+        <div class="rating" id="star-rating">
+            <!-- 5-star rating icons -->
+            <span class="star" data-rating="1">&#9733;</span>
+            <span class="star" data-rating="2">&#9733;</span>
+            <span class="star" data-rating="3">&#9733;</span>
+            <span class="star" data-rating="4">&#9733;</span>
+            <span class="star" data-rating="5">&#9733;</span>
+        </div>
+        <textarea class="addcomment" placeholder="Write your comment here..."></textarea>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const ratingElement = document.getElementById('star-rating');
+        const commentTextarea = document.querySelector('.comment');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = star.getAttribute('data-rating');
+                ratingElement.setAttribute('data-selected', rating);
+                stars.forEach(s => s.classList.remove('selected'));
+                for (let i = 0; i < rating; i++) {
+                    stars[i].classList.add('selected');
+                }
+            });
+        });
+        commentTextarea.addEventListener('input', (event) => {
+        });
+    </script>
+</div>
+{% endblock %}
