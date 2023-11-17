@@ -1,0 +1,137 @@
+<style>
+    .cardtext {
+        padding: 20px 100px;
+    }
+
+    .headtitle {
+        color: #290568;
+        font-family: system-ui;
+        font-size: 180%;
+        font-weight: 700;
+        line-height: normal;
+        padding-bottom: 50px;
+    }
+
+    .linebutton {
+        color: #25055D;
+        display: flex;
+        padding: 8px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+        border-radius: 10px;
+        border: 1px solid #290568;
+        background: #FFF;
+    }
+
+    .linebutton1 {
+        display: flex;
+        padding: 8px 100px 0 30px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        align-self: stretch;
+    }
+
+    .linebutton11 {
+        display: flex;
+        padding: 20px 0 0 30px;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        align-self: stretch;
+    }
+
+    .cardd {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20%;
+        border-radius: 20px;
+        background: #FFF;
+    }
+
+    .image-container {
+        flex: 0 0 auto;
+        margin-right: 20px;
+    }
+
+    .text-button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Additional styles for the text and button container */
+    }
+
+    .pic1 {
+        width: 470px;
+        height: 350px;
+        border-radius: 10px;
+    }
+
+    .h4 {
+        color: #25055D;
+    }
+
+    .bigcomingevet {
+        display: flex;
+        padding: 53px 35px;
+        flex-direction: column;
+        gap: 32px;
+        border-radius: 20px;
+        background: #25055C;
+    }
+
+    .buttonticket {
+        border-radius: 10px;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 24px;
+        background: #290568;
+    }
+</style>
+{% extends 'webpages/layout.html' %}
+{% load static %}
+{% block title %}
+Disneyland Reviews
+{% endblock %}
+{% block content %}
+
+<div class="cardtext">
+    <p class="headtitle">Discover your Disneyland! </p>
+    <img src="{% static 'disney.jpeg' %}"
+        style="width: auto; height: 65%;  border-radius: 20px;margin: 0 auto;display: block; " />
+    <div class="linebutton11">
+        <button class="linebutton">Share your thoughts about Disney!</button>
+    </div>
+</div>
+<div class="cardtext">
+    <p class="headtitle">Upcoming Events</p>
+    <div class="bigcomingevet">
+        <div class="cardd">
+            <div class="image-container">
+                <img src="{% static 'images/halloweenParis.webp' %}" class="pic1" alt="halloween">
+            </div>
+            <div class="text-button-container">
+                <h4 class="h4">Halloween 2023</h4>
+                <h4 class="h4">at Disneyland Paris!</h4>
+                <button class="buttonticket">Ticket</button>
+            </div>
+        </div>
+        <div class="cardd">
+            <div class="image-container">
+                <img src="{% static 'halloween.jpeg' %}" class="pic1" alt="halloween">
+            </div>
+            <div class="text-button-container">
+                <h4 class="h4">Halloween 2023</h4>
+                <h4 class="h4">at Disneyland Tokyo!</h4>
+                <button class="buttonticket">Ticket</button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="linebutton1">
+    <button class="linebutton">Discover more</button>
+</div>
+</div>
+{% endblock %}
