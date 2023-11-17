@@ -19,9 +19,14 @@
     .form1 {
         width: 25%;
     }
-
+    .form2 {
+        width: 50%;
+    }
     .col-7 {
         background-color: blueviolet;
+    }
+    .form-control{
+        border-radius: 20px;
     }
 </style>
 
@@ -35,12 +40,28 @@
             <div class="row  row-cols-md3">
                 <div class="form1">
                     <label for="Username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="Username" placeholder="Nsme">
+                    <input type="text" class="form-control" id="Username" placeholder="Name">
                 </div>
                 <div class="form1">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <label for="exampleFormControlInput1" class="form-label">Name</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                        placeholder="Name">
+                </div>
+            </div>
+            <div class="form2">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="xxxx@email">
+            </div>
+            <div class="row  row-cols-md3">
+                <div class="form1">
+                    <label for="Username" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="Username" placeholder="Password">
+                </div>
+                <div class="form1">
+                    <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Password">
                 </div>
             </div>
         </div>
