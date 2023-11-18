@@ -9,6 +9,9 @@ def index(request):
 def home(request):
     context = {}
     return render(request, "webpages/home.html", context=context)
+def home1(request):
+    context = {}
+    return render(request, "webpages/home1.html", context=context)
 
 def register(request):
     context = {}
