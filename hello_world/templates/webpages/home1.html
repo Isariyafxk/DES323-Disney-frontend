@@ -1,5 +1,19 @@
 <style>
-
+    .img-fluid .rounded-start{
+        height: 100% !important;
+        object-fit: cover;
+    }
+    ,btn-primary{
+        color: #25055D !important;
+        display: flex;
+        padding: 8px 24px;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+        border-radius: 10px;
+        border: 1px solid #290568;
+        background: #FFF;
+    }
 </style>
 {% extends 'webpages/layout.html' %}
 {% load static %}
@@ -15,13 +29,13 @@ Disneyland Reviews
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="{% static 'images/halloweenParis.webp' %}" class="img-fluid rounded-start" alt="..." >
+            <img src="{% static 'images/halloweenParis.webp' %}" class="img-fluid rounded-start" alt="..." style=" height: 100%;
+            object-fit: cover;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <h5 class="card-title">Halloween 2023</h5>
+              <a href="#" class="btn btn-primary">TICKET</a>
             </div>
           </div>
         </div>
