@@ -13,3 +13,7 @@ def home(request):
 def register(request):
     context = {}
     return render(request, "webpages/register.html", context=context)
+
+def login(request):
+    context = {}
+    return render(request, "webpages/login.html", context=context)

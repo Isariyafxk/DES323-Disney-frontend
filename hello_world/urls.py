@@ -26,6 +26,7 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("home", core_views.home),
     path("register", core_views.register),
+    path("login", core_views.login),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
