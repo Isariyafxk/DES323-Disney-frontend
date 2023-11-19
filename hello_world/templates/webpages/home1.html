@@ -1,13 +1,43 @@
 <style>
-   .headtitle {
-        color: #290568;
-        font-family: system-ui;
-        font-size: 180%;
-        font-weight: 700;
-        line-height: normal;
-        padding-bottom: 50px;
-    }
-  .img-fluid{
+  .headtitle {
+    color: #290568;
+    font-family: system-ui;
+    font-size: 180%;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: 50px;
+  }
+
+  .img-discover {
+    width: auto;
+    height: 65%;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .button-container {
+    display: flex;
+    padding: 20px 0 0 30px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+  }
+
+  .button {
+    color: #25055D;
+    display: flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    border-radius: 10px;
+    border: 1px solid #290568;
+    background: #FFF;
+  }
+
+  .img-fluid {
     height: 100% !important;
     object-fit: cover;
   }
@@ -46,12 +76,14 @@
     border-radius: 20px;
     background: #25055C;
   }
+
   .card1 {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
-  .card-body{
+
+  .card-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,37 +97,43 @@
 Disneyland Reviews
 {% endblock %}
 {% block content %}
-<p class="headtitle"> Upcoming Event! </p>
-<div class="upcomingevent">
-  <div class="card1">
-    <div class="card mb-7">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="{% static 'images/halloween.jpeg' %}" class="img-fluid " alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body-container">
-            <div class="card-body">
-              <h5 class="card-title">Halloween 2023</h5>
-              <a href="#" class="btn btn-primary">TICKET</a>
+<div class="discover-container">
+  <p class="headtitle"> Discover your Ddisneyland! </p>
+  <img src="{% static 'images/disney.jpeg' %}" class="img-discover" alt="...">
+  <div class="button-container">
+    <button class="button">Share your thoughts about Disney!</button>
+  </div>
+</div>
+<div class="upcomingevent-card">
+  <p class="headtitle"> Upcoming Event! </p>
+  <div class="upcomingevent">
+    <div class="card1">
+      <div class="card mb-7">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'images/halloween.jpeg' %}" class="img-fluid " alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body-container">
+              <div class="card-body">
+                <h5 class="card-title">Halloween 2023</h5>
+                <a href="#" class="btn btn-primary">TICKET</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-
-
-    <div class="card mb-7">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="{% static 'images/halloweenParis.webp' %}" class="img-fluid " alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body-container">
-            <div class="card-body">
-              <h5 class="card-title">Halloween 2023</h5>
-              <a href="#" class="btn btn-primary">TICKET</a>
+      <div class="card mb-7">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{% static 'images/halloweenParis.webp' %}" class="img-fluid " alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body-container">
+              <div class="card-body">
+                <h5 class="card-title">Halloween 2023</h5>
+                <a href="#" class="btn btn-primary">TICKET</a>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +141,6 @@ Disneyland Reviews
     </div>
   </div>
 </div>
-
 
 
 
