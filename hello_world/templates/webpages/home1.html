@@ -23,6 +23,19 @@
       height: 100% !important;
       object-fit: cover;
     }
+    .upcomingevent{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+    display: flex;
+    padding: 53px 35px;
+    gap: 32px;
+    border-radius: 20px;
+    background: #25055C;
+  }
 </style>
 {% extends 'webpages/layout.html' %}
 {% load static %}
@@ -31,9 +44,9 @@ Disneyland Reviews
 {% endblock %}
 {% block content %}
 
-    <div class="row gy-5">
+    <!-- <div class="row gy-5">
         <div class="p-3 border">Custom column padding</div>
-    </div>
+    </div> -->
     <div class="upcomingevent">
       <div class="card mb-7" style="max-width: 80%;">
         <div class="row g-0">
