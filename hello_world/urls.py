@@ -27,6 +27,7 @@ urlpatterns = [
     path("home", core_views.home),
     path("register", core_views.register),
     path("login", core_views.login),
+    path("places", core_views.places),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

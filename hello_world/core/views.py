@@ -17,3 +17,7 @@ def register(request):
 def login(request):
     context = {}
     return render(request, "webpages/login.html", context=context)
+
+def places(request):
+    context = {}
+    return render(request, "webpages/places.html", context=context)

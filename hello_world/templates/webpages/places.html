@@ -1,0 +1,102 @@
+<style>
+    .headtitle {
+        color: #290568;
+        font-family: system-ui;
+        font-size: 180%;
+        font-weight: 700;
+        line-height: normal;
+        padding: 50px 0 20px 0;
+    }
+
+    .dropdown-toggle {
+        border-radius: 10 px;
+        text-align: left;
+        width: 15rem;
+        display: flex !important;
+        justify-content: space-between;
+        border: 0.5px solid #290568 !important;
+        background: #EAE6F1 !important;
+    }
+
+    .dropdown-menu {
+        border-radius: 10 px;
+        text-align: left;
+        width: 15rem;
+        border: 0.5px solid #290568 !important;
+        background: #EAE6F1 !important;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .card {
+        margin: 0 2% 0 2%;
+    }
+
+    .App-log- {
+        width: 20rem;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .img-fluid {
+        border-radius: 20px;
+    }
+</style>
+{% extends 'webpages/layout.html' %}
+{% load static %}
+{% block title %}
+Disneyland Reviews
+{% endblock %}
+{% block content %}
+<div class="select-places-container">
+    <p class="headtitle"> Discover your Disneyland! </p>
+    <div class="dropdown">
+        <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#hongkonglink">Disneyland Hongkok</a></li>
+            <li><a class="dropdown-item" href="#parislink">Disneyland Paris</a></li>
+            <li><a class="dropdown-item" href="#californialink">Disneyland California</a></li>
+        </ul>
+    </div>
+    <div class="card mb-7">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="card-body-container">
+                    <div class="card-body">
+                        <img src="{% static 'images/disney_logo.svg.png' %}" class="App-logo" alt="logo" />
+                        <p style="color: #2E0674;
+                        text-align: center;
+                        font-family: Inter;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;">
+                            Disneyland is a theme park in Anaheim, California. Opened in 1955, it was the first theme
+                            park
+                            opened by The Walt Disney Company and the only one designed and constructed under the direct
+                            supervision
+                            of WaltDisney
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'images/disney.jpeg' %}" class="img-fluid" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="show-result-container">
+    <p class="headtitle">Disneyland Hongkong</p>
+</div>
+
+{% endblock %}
