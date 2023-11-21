@@ -26,7 +26,7 @@
         width: 50%;
     }
     .form2 {
-        width: 75%;
+        width: 50%;
     }
     .col-7 {
         /* background-color: blueviolet; */
@@ -70,24 +70,39 @@
         </div>
         <div class="col-lg-7 col-7">
             <div class="container center-form">
-                <p style="font-size: 32px;">Login</p>
-                
-                <div class="form2">
-                    <label for="exampleFormControlInput1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="xxxx@email.com">
-                </div>
-                 
-                <div class="form2">
-                    <label for="Password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="Password" placeholder="password">
-                </div>
-                
-                <div class="row  row-cols-md3">
+                <p style="font-size: 32px;">Profile</p>
+                <!-- Display user information -->
+                <div class="row  ">
                     <div class="form1">
-                        <button type="button" class="btn btn-outline">Signup</button>
+                        {% for user in latest_user %} 
+                        <label for="Username2" class="form-label">Username</label>
+                        <span class="form-text">{{userInfo.userName}}</span>
                     </div>
-                    <div class="form1">
-                        <button type="button" class="btn btn-reg">Login</button>
+                    <div class="form2">
+                        <label for="exampleFormControlOutput3" class="form-label">Name</label>
+                        <span class="form-text">{{userInfo.name}}</span>
+                    </div>
+                </div>
+                <div class="form3">
+                    <label for="exampleFormControlOutput4" class="form-label">Email</label>
+                    <span class="form-text">{{userInfo.email}}</span>
+                </div>
+                <div class="row  row-cols-md3">
+                    <div class="form4">
+                        <label for="Username3" class="form-label">Password</label>
+                        <span class="form-text">{{userInfo.passWord}}</span> <!-- Display password as asterisks or omit it for security -->
+                    </div>
+                </div>
+                <div class="row  row-cols-md3">
+                    <div class="form6">
+                        <a href="/editprofile" type="button" class="btn btn-outline">Edit</a>
+                    </div>
+                    <div class="form7">
+                        <button type="submit" class="btn btn-reg">Delete</button>
+                    </div>
+                    <div class="form6">
+                        <a href="/home" type="button" class="btn btn-outline">Back To Home</a>
+                        {% endfor %}  
                     </div>
                 </div>
             </div>

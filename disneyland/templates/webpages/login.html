@@ -26,7 +26,7 @@
         width: 50%;
     }
     .form2 {
-        width: 50%;
+        width: 75%;
     }
     .col-7 {
         /* background-color: blueviolet; */
@@ -70,40 +70,31 @@
         </div>
         <div class="col-lg-7 col-7">
             <div class="container center-form">
-                <p style="font-size: 32px;">Register</p>
-                <div class="row  ">
-                    <div class="form1">
-                        <label for="Username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="Username" placeholder="Name">
-                    </div>
-                    <div class="form1">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name">
-                    </div>
-                </div>
+                <p style="font-size: 32px;">Login</p>
+                <form method="post" action='/login'>
+                    {% csrf_token %}
                 <div class="form2">
                     <label for="exampleFormControlInput1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="xxxx@email.com">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="l_email" placeholder="xxxx@email.com">
                 </div>
+                 
+                <div class="form2">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="Password" name="l_password" placeholder="password">
+                </div>
+                
                 <div class="row  row-cols-md3">
                     <div class="form1">
-                        <label for="Username" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="Username" placeholder="Password">
+                        <a href = "/register" type= "submit" class="btn btn-outline">Signup</a>
                     </div>
                     <div class="form1">
-                        <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="exampleFormControlInput1"
-                            placeholder="Password">
+                        <button type="submit" class="btn btn-reg">Login</button>
+                    </div>
+                    <div class="form1">
+                        <a href = "/home" type= "submit" class="btn btn-outline">Back To Home</a>
                     </div>
                 </div>
-                <div class="row  row-cols-md3">
-                    <div class="form1">
-                        <button type="button" class="btn btn-outline">Cancel</button>
-                    </div>
-                    <div class="form1">
-                        <button type="button" class="btn btn-reg">Register</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
