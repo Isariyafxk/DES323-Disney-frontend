@@ -28,20 +28,27 @@ def import_data_csv(request):
     return JsonResponse({"success_indexes":sucesss,"error_index":errors})
 
 def get_data_disney(request):
-    review_texts = DisneylandReview.objects.all().values()
-    df = pd.DataFrame(review_texts)
-    Branch = df['Branch']
-    ca_data = df[df['Branch'] == 'Disneyland_California']
-    ca_text = ca_data[['Review_ID', 'Text']].to_dict(orient='records')
-    return JsonResponse({"ca_text": ca_text})
-
-
-def get_data(request):
-     # Assuming that your model has 'Review' and 'Text' fields
-    review_texts = DisneylandReview.objects.all().values('Review_ID', 'Text')
+    review_texts = DisneylandReview.objects.all().values('Review_ID', 'Text')[:10]
+    print(review_texts)
     context_data = {
-        "filter_type": "All",
-        "reviews": review_texts  # Change "review" to "reviews" for consistency
-    }
+        "comment":  review_texts
 
-    return render(request, 'places.html', context=context_data)
+
+    }
+    
+    return render(request, '../../hello_world/templates/webpages/places.html', context=context_data)
+
+
+
+
+
+
+# def get_data(request):
+#      # Assuming that your model has 'Review' and 'Text' fields
+#     review_texts = DisneylandReview.objects.all().values('Review_ID', 'Text')
+#     context_data = {
+#         "filter_type": "All",
+#         "reviews": review_texts  # Change "review" to "reviews" for consistency
+#     }
+
+#     return render(request, 'places.html', context=context_data)

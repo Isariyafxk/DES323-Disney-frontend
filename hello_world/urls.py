@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from hello_world.core import views as core_views
+from models import views as models_view
 
 urlpatterns = [
     path("", core_views.index),
@@ -28,7 +29,7 @@ urlpatterns = [
     path("login", core_views.login),
     path("places", core_views.places),
     path("import/csv", include('models.urls')),
-    path("review/",include("models.urls")),
+    path("review/check",models_view.get_data_disney),
 
 ]
 if settings.DEBUG:

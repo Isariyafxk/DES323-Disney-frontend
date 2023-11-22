@@ -192,14 +192,26 @@ Disneyland Reviews
                                 border-radius: 10px;">
                                 Rating
                             </button>
+                            <script>
+                                function selectRating(rating) {
+                                    // Do something with the selected rating (in this case, logging it to the console)
+                                    console.log("Selected Rating: " + rating);
+                            
+                                    // You can also use the rating as an ID and perform further actions if needed
+                                    // For example, if you want to update a hidden input field with the selected rating ID
+                                    document.getElementById('selectedRating').value = rating;
+                                    print(rating)
+                                }
+                            </script>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="border-radius: 10 px;
                                 border: 0.5px solid #290568; 
                                 background: #EAE6F1;">
-                                <li><a class="dropdown-item" href="#">⭐️⭐️⭐️⭐️⭐️</a></li>
-                                <li><a class="dropdown-item" href="#">⭐️⭐️⭐️⭐️</a></li>
-                                <li><a class="dropdown-item" href="#">⭐️⭐️⭐️</a></li>
-                                <li><a class="dropdown-item" href="#">⭐️⭐️</a></li>
-                                <li><a class="dropdown-item" href="#">⭐️</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectRating(5)" id="5">⭐️⭐️⭐️⭐️⭐️</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectRating(4)" id="4">⭐️⭐️⭐️⭐️</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectRating(3)" id="3">⭐️⭐️⭐️</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectRating(2)" id="2">⭐️⭐️</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectRating(1)" id="1">⭐️</a></li>
+                            </ul>
                             </ul>
                         </div>
                         <div class="dropdown">
@@ -225,8 +237,9 @@ Disneyland Reviews
                     <form method="post" action="/places}">
                         <!-- comment -->
                         <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                            {% for reviews in reviews %}
-                                {{ reviews.Review_ID }}: {{ reviews.Text }}<br>
+                        
+                            {% for review in comment %}
+                            <p>Review ID: {{ review.Review_ID }} - Text: {{ review.Text }}</p>
                             {% endfor %}
                         </div>
                 </form>
