@@ -72,7 +72,7 @@
             <div class="container center-form">
                 <p style="font-size: 32px;">Register</p>
                 <!--added form action-->
-                <form method="post" action='/register'>
+                <form method="post" action='../account/register'>
                     {% csrf_token %}
                         <div class="row  ">
                             <div class="form1">
@@ -100,19 +100,30 @@
                         </div>           
                         <div class="row  row-cols-md3">
                             <div class="form6">
-                                <a href="/home" type="button" class="btn btn-outline">Cancel</a>
+                                <a href="../account/home" type="button" class="btn btn-outline">Cancel</a>
                             </div>
                             <div class="form7">
                                 <button type="submit" class="btn btn-reg">Register</button>
                             </div>
                             <div class="form6">
-                                <a href="/login" type="button" class="btn btn-outline">Login</a>
+                                <a href="../account/login" type="button" class="btn btn-outline">Login</a>
                             </div>
                         </div>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        // a message variable passed from Django
+        var message = "{{ message }}";
+
+        // Check if the message is not empty and show an alert
+        if (message) {
+            alert(message);
+        }
+    </script>
 </body>
+
+
 
 </html>

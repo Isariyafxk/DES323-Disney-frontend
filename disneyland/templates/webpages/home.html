@@ -154,5 +154,14 @@
       <button class="button">Discover more</button>
     </div>
   </div>
-  
+  <script>
+    // a message variable passed from Django
+    var message = "{{ message }}";
+
+    // Check if the message is not empty and show an alert
+    if (message) {
+        alert(message);
+    }
+</script>
   {% endblock %}
+  

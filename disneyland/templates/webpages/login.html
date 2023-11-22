@@ -82,22 +82,30 @@
                     <label for="Password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="Password" name="l_password" placeholder="password">
                 </div>
-                
                 <div class="row  row-cols-md3">
                     <div class="form1">
-                        <a href = "/register" type= "submit" class="btn btn-outline">Signup</a>
+                        <a href = "../account/register" type= "submit" class="btn btn-outline">Signup</a>
                     </div>
                     <div class="form1">
                         <button type="submit" class="btn btn-reg">Login</button>
                     </div>
                     <div class="form1">
-                        <a href = "/home" type= "submit" class="btn btn-outline">Back To Home</a>
+                        <a href = "../account/home" type= "submit" class="btn btn-outline">Back To Home</a>
                     </div>
                 </div>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        // a message variable passed from Django
+        var message = "{{ message }}";
+
+        // Check if the message is not empty and show an alert
+        if (message) {
+            alert(message);
+        }
+    </script>
 </body>
 
 </html>

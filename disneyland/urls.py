@@ -2,7 +2,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from disneyland import views
-from hello_world.core import views as core_views
+
 
 urlpatterns = [
     path("",views.register),
@@ -11,6 +11,13 @@ urlpatterns = [
     path("login",views.login),
     path("places",views.places),
     path("profile",views.profile),
-    path("editprofile",views.editprofile)
+    path("editprofile",views.editprofile),
+    path("places/hongkonglink",views.hk),
+    path("places/parislink",views.ps),
+    path("places/californialink",views.cl),
+    #path("import_data",views.import_data_csv)
+   
+
+
 
 ]

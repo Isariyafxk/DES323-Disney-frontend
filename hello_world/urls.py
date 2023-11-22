@@ -21,6 +21,7 @@ from hello_world.core import views as core_views
 
 urlpatterns = [
     path("", include('disneyland.urls')),
+    path("account/", include('disneyland.urls')),
     path("admin/", admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
 ]

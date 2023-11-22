@@ -77,25 +77,25 @@
                         <div class="row  ">
                             <div class="form1">
                                 <label for="Username5" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="Username5" name="r_username" placeholder="Name">
+                                <input type="text" class="form-control" id="Username5" name="u_username" placeholder= "{{user.userName}}" >
                             </div>
                             <div class="form2">
                                 <label for="exampleFormControlInput5" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput5" name="r_name" placeholder="Name">
+                                <input type="text" class="form-control" id="exampleFormControlInput5" name="u_name" placeholder="{{user.name}}">
                             </div>
                         </div>
                         <div class="form3">
                             <label for="exampleFormControlInput6" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput6" name="r_email" placeholder="xxxx@email.com">
+                            <input type="email" class="form-control" id="exampleFormControlInput6" name="u_email" placeholder="{{user.email}}">
                         </div>
                         <div class="row  row-cols-md3">
                             <div class="form4">
                                 <label for="Username6" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="Username6" name="r_password" placeholder="Password">
+                                <input type="password" class="form-control" id="Username6" name="u_password" placeholder="{{user.passWord}}">
                             </div>
                             <div class="form5">
                                 <label for="exampleFormControlInput7" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="exampleFormControlInput7" name ="r_cpassword" placeholder="Password">
+                                <input type="password" class="form-control" id="exampleFormControlInput7" name ="u_cpassword" placeholder="{{user.confirmpass}}">
                             </div>
                         </div>           
                         <div class="row  row-cols-md3">
@@ -110,6 +110,15 @@
             </div>
         </div>
     </div>
+    <script>
+        // a message variable passed from Django
+        var message = "{{ message }}";
+
+        // Check if the message is not empty and show an alert
+        if (message) {
+            alert(message);
+        }
+    </script>
 </body>
 
 </html>

@@ -72,42 +72,51 @@
             <div class="container center-form">
                 <p style="font-size: 32px;">Profile</p>
                 <!-- Display user information -->
-                <div class="row  ">
-                    <div class="form1">
-                        {% for user in latest_user %} 
-                        <label for="Username2" class="form-label">Username</label>
-                        <span class="form-text">{{userInfo.userName}}</span>
+                    <div class="row  ">
+                        <div class="form1">
+                            <label for="Username2" class="form-label">Username</label>
+                            <span class="form-text">{{ user.userName }}</span>
+                        </div>
+                        <div class="form2">
+                            <label for="exampleFormControlOutput3" class="form-label">Name</label>
+                            <span class="form-text">{{ user.name }}</span>
+                        </div>
                     </div>
-                    <div class="form2">
-                        <label for="exampleFormControlOutput3" class="form-label">Name</label>
-                        <span class="form-text">{{userInfo.name}}</span>
+                    <div class="form3">
+                        <label for="exampleFormControlOutput4" class="form-label">Email</label>
+                        <span class="form-text">{{ user.email }}</span>
                     </div>
-                </div>
-                <div class="form3">
-                    <label for="exampleFormControlOutput4" class="form-label">Email</label>
-                    <span class="form-text">{{userInfo.email}}</span>
-                </div>
-                <div class="row  row-cols-md3">
-                    <div class="form4">
-                        <label for="Username3" class="form-label">Password</label>
-                        <span class="form-text">{{userInfo.passWord}}</span> <!-- Display password as asterisks or omit it for security -->
+                    <div class="row  row-cols-md3">
+                        <div class="form4">
+                            <label for="Username3" class="form-label">Password</label>
+                            <span class="form-text">********</span> <!-- Display asterisks or omit for security -->
+                        </div>
                     </div>
-                </div>
-                <div class="row  row-cols-md3">
-                    <div class="form6">
-                        <a href="/editprofile" type="button" class="btn btn-outline">Edit</a>
+                    <form method="post" action='../account/profile'> <!-- Change the action to an appropriate endpoint -->
+                        {% csrf_token %}
+                    <div class="row  row-cols-md3">
+                        <div class="form6">
+                            <a href="../account/editprofile" type="button" class="btn btn-outline">Edit</a>
+                        </div>
+                        <div class="form7">
+                            <button type="submit" class="btn btn-reg">Delete</button>
+                        </div>
+                        <div class="form6">
+                            <a href="../account/home" type="button" class="btn btn-outline">Back To Home</a>
+                        </div>
                     </div>
-                    <div class="form7">
-                        <button type="submit" class="btn btn-reg">Delete</button>
-                    </div>
-                    <div class="form6">
-                        <a href="/home" type="button" class="btn btn-outline">Back To Home</a>
-                        {% endfor %}  
-                    </div>
-                </div>
+                 </form>
             </div>
         </div>
     </div>
+    <script>
+        var message = "{{ message }}";
+    
+        // Check if the message is not empty and show an alert
+        if (message) {
+            alert(message);
+        }
+    </script>
 </body>
 
 </html>
