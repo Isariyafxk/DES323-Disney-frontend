@@ -71,7 +71,7 @@
     }
 
     .scrollspy-example {
-    max-height: 400px; /* Adjust the maximum height as needed */
+    max-height: 530px; /* Adjust the maximum height as needed */
     overflow-y: scroll;
 }
 
@@ -177,7 +177,9 @@ Disneyland Reviews
                     
                                 // No legend is created, and labels inside the pie chart are removed.
                             </script>
-                            <p style="font-size: 42px; color: #290568; font-weight: 1000;">{{ branch }}</p>
+                            <p style="font-size: 28px; color: #290568; font-weight: 1000;">Positive : {{ d3.positive_percentage }}%</p>
+                            <p style="font-size: 28px; color: #290568; font-weight: 1000;">Neutral: {{ d3.neutral_percentage }}%</p>
+                            <p style="font-size: 28px; color: #290568; font-weight: 1000;">Negative : {{ d3.negative_percentage }}%</p>
                         </div>
                     </div>
                 </div>
